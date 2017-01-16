@@ -4,7 +4,9 @@ $(document).ready(function(){
 	set_size(function(){
 		var myLenticular = new Lenticular.Image($('.lenticular_container')[0], {
 			images: 'imgs/Test##.jpg',
-			frames: 24
+			frames: 24,
+			minTilt: 12,
+			maxTile: 12
 		});
 	});
 });
