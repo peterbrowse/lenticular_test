@@ -19,12 +19,6 @@ function set_size(callback) {
 	$('.lenticular_container').css('width', $(window).width());
 	$('.lenticular_container').css('height', $(window).height());
 	
-	var ua = window.navigator.userAgent;
-	if(ua.indexOf('iPhone') !== -1 && ua.indexOf('Safari') !== -1) {
-		attachMobileSafariAddressBarHelpTip('#main-nav');
-	    attachMobileSafariAddressBarHelpTip('.lenticular_container');
-	}
-	
 	callback();
 }
 
@@ -44,23 +38,6 @@ function updateOrientation(e) {
 		$body.removeClass('is-portrait').addClass('is-landscape');
 	}
 	$(window).scrollTop(0).scrollLeft(0);
-}
-
-var attachMobileSafariAddressBarHelpTip = function (target) {
-    var $target = $(target);
-    $target.tooltip({
-        title: 'Scroll up to hide Safari address bar',
-        trigger: 'manual',
-        placement: 'bottom'
-    });
-    $(window).on('resize', function () {
-        var bodyHeight = document.body.offsetHeight;
-        var windowHeight = window.innerHeight;
-        var isLandscape = Math.abs(window.orientation) === 90;
-        var showTooltip = (windowHeight < bodyHeight);
-        if(!isLandscape) return;
-        $target.tooltip(showTooltip ? 'show' : 'hide');
-    });
 }
 
 //FIXING FOREACH IN IE8
