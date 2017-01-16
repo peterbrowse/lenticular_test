@@ -1,7 +1,10 @@
 var debug = false;
 
 $(document).ready(function(){
-	
+	var myLenticular = new Lenticular.Image($('.lenticular_container')[0], {
+		images: 'imgs/Test##.jpg',
+		frames: 24
+	});
 });
 
 //FIXING FOREACH IN IE8

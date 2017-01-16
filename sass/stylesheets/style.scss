@@ -9,7 +9,7 @@ $bg-color: #000000;
 @import 'mixins';
 
 html, body {
-	
+	background-color: $bg-color;
 }
 
 section {
@@ -39,4 +39,9 @@ section {
 	flex-flow: column wrap;
 	-webkit-align-items: stretch;
 	align-items: stretch;
+	
+	.lenticular_container {
+		width: 476px;
+		height: 600px;
+	}
 }
